@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.repositories">
+      <connectorCore
+            class="net.vqs.mylyn.connector.core.VqsRepositoryConnector"
+            name="Issue Tracker Connector Core">
+      </connectorCore>
+      <connectorUi
+            brandingIcon="icons/onevizion.png"
+            class="net.vqs.mylyn.connector.ui.VqsConnectorUi"
+            name="Issue Tracker Connector Ui">
+      </connectorUi>
+   </extension>
+   <extension
+         point="org.eclipse.mylyn.tasks.core.templates">
+      <repository
+            anonymous="false"
+            label="trackor.onevizion.com"
+            repositoryKind="net.vqs.mylyn.connector"
+            urlRepository="http://trackor.onevizion.com">
+      </repository>
+   </extension>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.editors">
+      <pageFactory
+            class="net.vqs.mylyn.connector.ui.editor.TaskEditorPageFactory"
+            id="net.vqs.mylyn.connector.ui.pageFactory">
+      </pageFactory>
+   </extension>
+
+</plugin>

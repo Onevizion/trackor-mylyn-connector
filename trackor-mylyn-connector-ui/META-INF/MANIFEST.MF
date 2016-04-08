@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: trackor-mylyn-connector-ui
+Bundle-SymbolicName: trackor-mylyn-connector-ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: net.vqs.mylyn.connector.ui.VqsUiPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.forms,
+ org.eclipse.mylyn.tasks.core,
+ org.eclipse.mylyn.tasks.ui,
+ trackor-mylyn-connector-core,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: onevizion.com
