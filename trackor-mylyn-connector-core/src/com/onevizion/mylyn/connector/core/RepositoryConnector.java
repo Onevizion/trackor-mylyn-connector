@@ -1,10 +1,7 @@
-package net.vqs.mylyn.connector.core;
+package com.onevizion.mylyn.connector.core;
 
 import java.util.Date;
 import java.util.List;
-
-import net.vqs.mylyn.connector.util.QueryUtils;
-import net.vqs.mylyn.connector.vo.Issue;
 
 import org.apache.commons.lang.math.NumberUtils;
 import org.eclipse.core.runtime.CoreException;
@@ -21,19 +18,22 @@ import org.eclipse.mylyn.tasks.core.data.TaskDataCollector;
 import org.eclipse.mylyn.tasks.core.data.TaskMapper;
 import org.eclipse.mylyn.tasks.core.sync.ISynchronizationSession;
 
-public class VqsRepositoryConnector extends AbstractRepositoryConnector {
+import com.onevizion.mylyn.connector.util.QueryUtils;
+import com.onevizion.mylyn.connector.vo.Issue;
 
-    private VqsClient vqsClient;
+public class RepositoryConnector extends AbstractRepositoryConnector {
+
+    private OvClient ovClient;
 
     private TaskDataHandler taskDataHandler;
 
-    public VqsRepositoryConnector() {
+    public RepositoryConnector() {
         taskDataHandler = new TaskDataHandler(this);
-        vqsClient = new VqsClient();
+        ovClient = new OvClient();
     }
 
-    public VqsClient getClient() {
-        return vqsClient;
+    public OvClient getClient() {
+        return ovClient;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class VqsRepositoryConnector extends AbstractRepositoryConnector {
 
     @Override
     public String getConnectorKind() {
-        return VqsCorePlugin.CONNECTOR_KIND;
+        return OvCorePlugin.CONNECTOR_KIND;
     }
 
     @Override
@@ -66,20 +66,20 @@ public class VqsRepositoryConnector extends AbstractRepositoryConnector {
     public TaskData getTaskData(TaskRepository repository, String taskIdOrKey, IProgressMonitor monitor)
             throws CoreException {
         if (!NumberUtils.isDigits(taskIdOrKey)) {
-            IStatus status = new Status(IStatus.ERROR, VqsCorePlugin.PLUGIN_ID, "Task Id must be a number");
+            IStatus status = new Status(IStatus.ERROR, OvCorePlugin.PLUGIN_ID, "Task Id must be a number");
             throw new CoreException(status);
         }
 
         try {
             Long taskId = new Long(taskIdOrKey);
-            Issue issue = vqsClient.getIssue(repository, taskId);
+            Issue issue = ovClient.getIssue(repository, taskId);
             TaskData taskData = taskDataHandler.getTaskData(repository, issue, monitor);
             return taskData;
         } catch (CoreException e) {
-            IStatus status = new Status(IStatus.ERROR, VqsCorePlugin.PLUGIN_ID, e.getMessage(), e);
+            IStatus status = new Status(IStatus.ERROR, OvCorePlugin.PLUGIN_ID, e.getMessage(), e);
             throw new CoreException(status);
         } catch (Exception e) {
-            IStatus status = new Status(IStatus.ERROR, VqsCorePlugin.PLUGIN_ID, e.getMessage(), e);
+            IStatus status = new Status(IStatus.ERROR, OvCorePlugin.PLUGIN_ID, e.getMessage(), e);
             throw new CoreException(status);
         }
     }
@@ -120,9 +120,9 @@ public class VqsRepositoryConnector extends AbstractRepositoryConnector {
         List<Issue> issues = null;
         try {
             String filterName = query.getAttribute(QueryUtils.QueryAttributes.CAN.toString());
-            issues = vqsClient.getIssues(repository, filterName);
+            issues = ovClient.getIssues(repository, filterName);
         } catch (Exception e) {
-            return new Status(IStatus.ERROR, VqsCorePlugin.PLUGIN_ID, "Can not get issues. " + e.getMessage(), e);
+            return new Status(IStatus.ERROR, OvCorePlugin.PLUGIN_ID, "Can not get issues. " + e.getMessage(), e);
         }
         for (Issue issue : issues) {
             TaskData taskData;
@@ -131,7 +131,7 @@ public class VqsRepositoryConnector extends AbstractRepositoryConnector {
                 collector.accept(taskData);
             } catch (CoreException e) {
                 String message = String.format("Can not get issue data from issue: \"%s\"", issue.getSummary());
-                return new Status(IStatus.ERROR, VqsCorePlugin.PLUGIN_ID, message, e);
+                return new Status(IStatus.ERROR, OvCorePlugin.PLUGIN_ID, message, e);
             }
         }
         return Status.OK_STATUS;

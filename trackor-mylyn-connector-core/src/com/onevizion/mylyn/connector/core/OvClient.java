@@ -1,10 +1,8 @@
-package net.vqs.mylyn.connector.core;
+package com.onevizion.mylyn.connector.core;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
-import net.vqs.mylyn.connector.util.JsonUtils;
-import net.vqs.mylyn.connector.vo.Issue;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HttpClient;
@@ -14,7 +12,10 @@ import org.eclipse.mylyn.commons.net.AuthenticationCredentials;
 import org.eclipse.mylyn.commons.net.AuthenticationType;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 
-public class VqsClient {
+import com.onevizion.mylyn.connector.util.JsonUtils;
+import com.onevizion.mylyn.connector.vo.Issue;
+
+public class OvClient {
 
     private final String CONTENT_TYPE = "application/json";
     private final String ISSUES_URI = "api/v1/trackor_type/issue";

@@ -1,8 +1,4 @@
-package net.vqs.mylyn.connector.ui.wizard;
-
-import net.vqs.mylyn.connector.core.VqsClient;
-import net.vqs.mylyn.connector.core.VqsRepositoryConnector;
-import net.vqs.mylyn.connector.util.QueryUtils;
+package com.onevizion.mylyn.connector.ui.wizard;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.jface.dialogs.IMessageProvider;
@@ -27,6 +23,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Text;
+
+import com.onevizion.mylyn.connector.core.OvClient;
+import com.onevizion.mylyn.connector.core.RepositoryConnector;
+import com.onevizion.mylyn.connector.util.QueryUtils;
 
 public class UserFilterQueryPage extends AbstractRepositoryQueryPage {
 
@@ -66,10 +66,10 @@ public class UserFilterQueryPage extends AbstractRepositoryQueryPage {
         }
     }
 
-    public VqsClient getClient() {
+    public OvClient getClient() {
         IRepositoryManager manager = TasksUi.getRepositoryManager();
         AbstractRepositoryConnector connector = manager.getRepositoryConnector(getTaskRepository().getConnectorKind());
-        return ((VqsRepositoryConnector) connector).getClient();
+        return ((RepositoryConnector) connector).getClient();
     }
 
     protected boolean restoreState(IRepositoryQuery query) {

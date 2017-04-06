@@ -1,4 +1,4 @@
-package net.vqs.mylyn.connector.ui.editor;
+package com.onevizion.mylyn.connector.ui.editor;
 
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorPage;
 import org.eclipse.mylyn.tasks.ui.editors.TaskEditor;

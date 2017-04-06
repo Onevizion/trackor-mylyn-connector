@@ -1,8 +1,6 @@
-package net.vqs.mylyn.connector.core;
+package com.onevizion.mylyn.connector.core;
 
 import java.util.Set;
-
-import net.vqs.mylyn.connector.vo.Issue;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -11,6 +9,9 @@ import org.eclipse.mylyn.tasks.core.RepositoryResponse;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.core.data.AbstractTaskDataHandler;
 import org.eclipse.mylyn.tasks.core.data.AbstractTaskSchema.Field;
+
+import com.onevizion.mylyn.connector.vo.Issue;
+
 import org.eclipse.mylyn.tasks.core.data.DefaultTaskSchema;
 import org.eclipse.mylyn.tasks.core.data.TaskAttribute;
 import org.eclipse.mylyn.tasks.core.data.TaskAttributeMapper;
@@ -21,9 +22,9 @@ public class TaskDataHandler extends AbstractTaskDataHandler {
 
     private static final String ESTIM_HOURS_KEY = "task.common.estimate";
 
-    private VqsRepositoryConnector connector;
+    private RepositoryConnector connector;
 
-    public TaskDataHandler(VqsRepositoryConnector connector) {
+    public TaskDataHandler(RepositoryConnector connector) {
         this.connector = connector;
     }
 

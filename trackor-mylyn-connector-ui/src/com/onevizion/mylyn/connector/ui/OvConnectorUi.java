@@ -1,8 +1,4 @@
-package net.vqs.mylyn.connector.ui;
-
-import net.vqs.mylyn.connector.core.VqsCorePlugin;
-import net.vqs.mylyn.connector.ui.wizard.RepositorySettingsPage;
-import net.vqs.mylyn.connector.ui.wizard.UserFilterQueryPage;
+package com.onevizion.mylyn.connector.ui;
 
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
@@ -13,15 +9,19 @@ import org.eclipse.mylyn.tasks.ui.AbstractRepositoryConnectorUi;
 import org.eclipse.mylyn.tasks.ui.wizards.ITaskRepositoryPage;
 import org.eclipse.mylyn.tasks.ui.wizards.RepositoryQueryWizard;
 
-public class VqsConnectorUi extends AbstractRepositoryConnectorUi {
+import com.onevizion.mylyn.connector.core.OvCorePlugin;
+import com.onevizion.mylyn.connector.ui.wizard.RepositorySettingsPage;
+import com.onevizion.mylyn.connector.ui.wizard.UserFilterQueryPage;
 
-    public VqsConnectorUi() {
+public class OvConnectorUi extends AbstractRepositoryConnectorUi {
+
+    public OvConnectorUi() {
         // TODO Auto-generated constructor stub
     }
 
     @Override
     public String getConnectorKind() {
-        return VqsCorePlugin.CONNECTOR_KIND;
+        return OvCorePlugin.CONNECTOR_KIND;
     }
 
     @Override

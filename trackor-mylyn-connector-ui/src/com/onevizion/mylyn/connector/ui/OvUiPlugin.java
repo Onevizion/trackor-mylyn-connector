@@ -1,4 +1,4 @@
-package net.vqs.mylyn.connector.ui;
+package com.onevizion.mylyn.connector.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -6,18 +6,18 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class VqsUiPlugin extends AbstractUIPlugin {
+public class OvUiPlugin extends AbstractUIPlugin {
 
     // The plug-in ID
     public static final String PLUGIN_ID = "net.vqs.mylyn.connector.ui"; //$NON-NLS-1$
 
     // The shared instance
-    private static VqsUiPlugin plugin;
+    private static OvUiPlugin plugin;
 
     /**
      * The constructor
      */
-    public VqsUiPlugin() {
+    public OvUiPlugin() {
     }
 
     /*
@@ -49,7 +49,7 @@ public class VqsUiPlugin extends AbstractUIPlugin {
      * 
      * @return the shared instance
      */
-    public static VqsUiPlugin getDefault() {
+    public static OvUiPlugin getDefault() {
         return plugin;
     }
 

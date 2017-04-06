@@ -4,12 +4,12 @@
    <extension
          point="org.eclipse.mylyn.tasks.ui.repositories">
       <connectorCore
-            class="net.vqs.mylyn.connector.core.VqsRepositoryConnector"
+            class="com.onevizion.mylyn.connector.core.RepositoryConnector"
             name="Issue Tracker Connector Core">
       </connectorCore>
       <connectorUi
             brandingIcon="icons/onevizion.png"
-            class="net.vqs.mylyn.connector.ui.VqsConnectorUi"
+            class="com.onevizion.mylyn.connector.ui.OvConnectorUi"
             name="Issue Tracker Connector Ui">
       </connectorUi>
    </extension>
@@ -18,15 +18,15 @@
       <repository
             anonymous="false"
             label="trackor.onevizion.com"
-            repositoryKind="net.vqs.mylyn.connector"
-            urlRepository="http://trackor.onevizion.com">
+            repositoryKind="com.onevizion.mylyn.connector"
+            urlRepository="https://trackor.onevizion.com">
       </repository>
    </extension>
    <extension
          point="org.eclipse.mylyn.tasks.ui.editors">
       <pageFactory
-            class="net.vqs.mylyn.connector.ui.editor.TaskEditorPageFactory"
-            id="net.vqs.mylyn.connector.ui.pageFactory">
+            class="com.onevizion.mylyn.connector.ui.editor.TaskEditorPageFactory"
+            id="com.onevizion.mylyn.connector.ui.pageFactory">
       </pageFactory>
    </extension>
 

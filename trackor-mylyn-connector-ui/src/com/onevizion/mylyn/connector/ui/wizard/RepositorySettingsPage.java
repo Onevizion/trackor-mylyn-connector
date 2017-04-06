@@ -1,8 +1,6 @@
-package net.vqs.mylyn.connector.ui.wizard;
+package com.onevizion.mylyn.connector.ui.wizard;
 
 import java.net.URI;
-
-import net.vqs.mylyn.connector.core.VqsCorePlugin;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -11,6 +9,8 @@ import org.eclipse.mylyn.tasks.core.RepositoryTemplate;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.wizards.AbstractRepositorySettingsPage;
 import org.eclipse.swt.widgets.Composite;
+
+import com.onevizion.mylyn.connector.core.OvCorePlugin;
 
 public class RepositorySettingsPage extends AbstractRepositorySettingsPage {
 
@@ -31,7 +31,7 @@ public class RepositorySettingsPage extends AbstractRepositorySettingsPage {
 
     @Override
     public String getConnectorKind() {
-        return VqsCorePlugin.CONNECTOR_KIND;
+        return OvCorePlugin.CONNECTOR_KIND;
     }
 
     @Override

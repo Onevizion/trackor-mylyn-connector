@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: trackor-mylyn-connector-core
 Bundle-SymbolicName: trackor-mylyn-connector-core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: net.vqs.mylyn.connector.core.VqsCorePlugin
-Export-Package: net.vqs.mylyn.connector.core,
- net.vqs.mylyn.connector.util,
- net.vqs.mylyn.connector.vo
+Bundle-Activator: com.onevizion.mylyn.connector.core.OvCorePlugin
+Export-Package: com.onevizion.mylyn.connector.core,
+ com.onevizion.mylyn.connector.util,
+ com.onevizion.mylyn.connector.vo
 Require-Bundle: org.eclipse.mylyn.commons.net,
  org.eclipse.mylyn.tasks.core,
  org.eclipse.core.runtime.compatibility
