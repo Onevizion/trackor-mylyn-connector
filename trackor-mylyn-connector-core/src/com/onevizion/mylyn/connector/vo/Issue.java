@@ -1,4 +1,4 @@
-package net.vqs.mylyn.connector.vo;
+package com.onevizion.mylyn.connector.vo;
 
 import java.util.ArrayList;
 import java.util.List;

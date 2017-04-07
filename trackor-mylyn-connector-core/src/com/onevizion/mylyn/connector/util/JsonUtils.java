@@ -1,4 +1,4 @@
-package net.vqs.mylyn.connector.util;
+package com.onevizion.mylyn.connector.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.vqs.mylyn.connector.vo.Issue;
+import com.onevizion.mylyn.connector.vo.Issue;
 
 public class JsonUtils {
     private static final char QUOTE_CHAR = '"';

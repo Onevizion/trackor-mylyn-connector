@@ -1,4 +1,4 @@
-package net.vqs.mylyn.connector.vo;
+package com.onevizion.mylyn.connector.vo;
 
 public enum IssueFields {
     ID("TRACKOR_ID"), KEY("XITOR_KEY"), SUMMARY("VQS_IT_XITOR_NAME"), PRIORITY("VQS_IT_PRIORITY"), COMPONENT(

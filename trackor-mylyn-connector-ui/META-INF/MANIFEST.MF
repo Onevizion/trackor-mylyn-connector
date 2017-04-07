@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: trackor-mylyn-connector-ui
 Bundle-SymbolicName: trackor-mylyn-connector-ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: net.vqs.mylyn.connector.ui.VqsUiPlugin
+Bundle-Activator: com.onevizion.mylyn.connector.ui.OvUiPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.forms,
  org.eclipse.mylyn.tasks.core,

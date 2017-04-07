@@ -1,17 +1,17 @@
-package net.vqs.mylyn.connector.core;
+package com.onevizion.mylyn.connector.core;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
-public class VqsCorePlugin extends Plugin {
+public class OvCorePlugin extends Plugin {
 
     public static final String PLUGIN_ID = "net.vqs.mylyn.connector.core"; //$NON-NLS-1$
 
     public static final String CONNECTOR_KIND = "net.vqs.mylyn.connector"; //$NON-NLS-1$
 
-    private static VqsCorePlugin plugin;
+    private static OvCorePlugin plugin;
 
-    public VqsCorePlugin() {
+    public OvCorePlugin() {
     }
 
     public void start(BundleContext context) throws Exception {
@@ -24,7 +24,7 @@ public class VqsCorePlugin extends Plugin {
         super.stop(context);
     }
 
-    public static VqsCorePlugin getDefault() {
+    public static OvCorePlugin getDefault() {
         return plugin;
     }
 }

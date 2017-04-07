@@ -1,4 +1,4 @@
-package net.vqs.mylyn.connector.util;
+package com.onevizion.mylyn.connector.util;
 
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 
