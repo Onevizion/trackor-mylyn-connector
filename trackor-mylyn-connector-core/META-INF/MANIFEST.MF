@@ -9,8 +9,9 @@ Export-Package: com.onevizion.mylyn.connector.core,
  com.onevizion.mylyn.connector.vo
 Require-Bundle: org.eclipse.mylyn.commons.net,
  org.eclipse.mylyn.tasks.core,
- org.eclipse.core.runtime.compatibility
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+ org.eclipse.osgi
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: onevizion.com
 Bundle-ClassPath: .
+Import-Package: org.eclipse.core.runtime

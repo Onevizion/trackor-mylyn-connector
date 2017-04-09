@@ -7,7 +7,7 @@ public class OvCorePlugin extends Plugin {
 
     public static final String PLUGIN_ID = "net.vqs.mylyn.connector.core"; //$NON-NLS-1$
 
-    public static final String CONNECTOR_KIND = "net.vqs.mylyn.connector"; //$NON-NLS-1$
+    public static final String CONNECTOR_KIND = "com.onevizion.mylyn.connector"; //$NON-NLS-1$
 
     private static OvCorePlugin plugin;
 
